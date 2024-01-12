@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <title>Glowing Icon</title>
+    <style>
+      :root {
+        --body-bg: #262626;
+        --font-color: #666;
+        --font-bg: #333;
+        --glowing-color: #ffee10;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--body-bg);
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      ul li {
+        list-style: none;
+        margin: 0 15px;
+      }
+      ul li a {
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 63px;
+        background: var(--font-bg);
+        border-radius: 50%;
+        font-size: 30px;
+        color: var(--font-color);
+        transition: 0.5s;
+      }
+
+      ul li a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: var(--glowing-color);
+        transition: 0.5s;
+        transform: scale(0.9);
+        z-index: -1;
+      }
+
+      ul li a:hover::before {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px var(--glowing-color);
+      }
+      ul li a:hover {
+        color: var(--glowing-color);
+        box-shadow: 0 0 5px var(--glowing-color);
+        text-shadow: 0 0 5px var(--glowing-color);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fab fa-edge"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fab fa-firefox"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fab fa-chrome"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fab fa-opera"></i>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>
